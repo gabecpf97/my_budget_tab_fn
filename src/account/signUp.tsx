@@ -1,5 +1,5 @@
 import React, { ChangeEvent, SyntheticEvent, useState } from "react";
-import { NavigateFunction, useNavigate } from "react-router-dom";
+import { Link, NavigateFunction, useNavigate } from "react-router-dom";
 import { FormElement } from "../general/formElement";
 import { Login } from "./logIn";
 
@@ -69,7 +69,7 @@ export const SignUp: React.FC = () => {
         <button type="submit">Sign up</button>
       </form>
       <p>Already signed up?</p>
-      <Login />
+      <Link to="/log-in">Log In</Link>
     </div>
   )
 }

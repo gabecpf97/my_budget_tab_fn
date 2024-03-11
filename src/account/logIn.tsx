@@ -1,7 +1,8 @@
 import React, { ChangeEvent, SyntheticEvent, useState } from "react";
-import { NavigateFunction, useNavigate } from "react-router-dom";
+import { Link, NavigateFunction, useNavigate } from "react-router-dom";
 import { ErrorType } from "../myInterfaces";
 import { FormElement } from "../general/formElement";
+import { SignUp } from "./signUp";
 
 export const Login: React.FC = () => {
   const [email, setEmail] = useState<string>("");
@@ -51,6 +52,8 @@ export const Login: React.FC = () => {
           type="password" onChangeFn={onPasswordChange} />
         <button type="submit">Log In</button>
       </form>
+      <p>Don't have an account?</p>
+      <Link to="/sign-up">Sign Up</Link>
     </div>
   )
 }
