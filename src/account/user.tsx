@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ErrorType, UserType } from "../myInterfaces";
+import { DisplayList } from "../list/displayList";
 
 export const User: React.FC = () => {
   const [userInfo, setUserInfo] = useState<UserType>();
@@ -28,10 +29,11 @@ export const User: React.FC = () => {
 
   return (
     <div>
-      <p>Username here</p>
-      <p>email address</p>
+      <p>{userInfo?.name}</p>
+      <p>{userInfo?.email}</p>
+      <p>{userInfo?.date.getFullYear()}</p>
       <div>
-        {/* show all list */}
+        <DisplayList ids={userInfo?.lists} />
       </div>
     </div>
   )

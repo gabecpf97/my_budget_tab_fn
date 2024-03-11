@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ErrorType, ListType } from "../myInterfaces";
+import { Item } from "../item/item";
 
 interface props {
   id: string,
@@ -28,11 +29,15 @@ export const List: React.FC<props> = ({ id }) => {
 
   return (
     <div>
-      <p>list name</p>
-      <p>date created</p>
-      <p>budget</p>
+      <p>{listInfo?.name}</p>
+      <p>{listInfo?.date.getFullYear()}</p>
+      <p>{listInfo?.budget}</p>
       <ul>
-        <li>item</li>
+        {listInfo?.items.map((item, idx) => (
+          <li key={idx}>
+            <Item id={item} />
+          </li>
+        ))}
       </ul>
     </div>
   )

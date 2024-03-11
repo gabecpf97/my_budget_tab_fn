@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { ErrorType, ItemType } from "../myInterfaces";
 
-export const Item: React.FC = () => {
+interface props {
+  id: string
+}
+
+export const Item: React.FC<props> = ({ id }) => {
   const [itemInfo, setitemInfo] = useState<ItemType>();
   const [errors, setErrors] = useState<ErrorType>();
 
@@ -24,8 +28,8 @@ export const Item: React.FC = () => {
 
   return (
     <div>
-      <p>item name</p>
-      <p>value</p>
+      <p>{itemInfo?.name}</p>
+      <p>{itemInfo?.value}</p>
     </div>
   )
 }
